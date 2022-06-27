@@ -1,0 +1,26 @@
+image: gitpod/workspace-postgres
+tasks:
+  - name: Backend
+    before: cd server
+    env:
+      SESSION_SECRET: oiwnewerJlw70238974
+      DATABASE_URL: postgres://localhost/postgres
+    init: |
+      npm install
+      npm run seed
+    command: npm run dev
+  - name: Frontend
+    before: cd client
+    init: |
+      npm install
+    command: DANGEROUSLY_DISABLE_HOST_CHECK=true npm start
+ports:
+  - port: 3000
+    onOpen: open-browser
+    visibility: public
+  - port: 3001
+    onOpen: notify
+    visibility: public
+  - port: 5432
+    onOpen: ignore
+    visibility: private

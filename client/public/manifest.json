@@ -1,0 +1,8 @@
+{
+  "short_name": "Messenger",
+  "name": "Messenger",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#3A8DFF",
+  "background_color": "#ffffff"
+}
