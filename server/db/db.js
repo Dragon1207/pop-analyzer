@@ -3,7 +3,7 @@ const Sequelize = require("sequelize");
 const db = new Sequelize(
   process.env.DATABASE_URL ||
     // "postgres://postgres:postgres@localhost:5432/population",
-    "postgres://sxxstekoovqtur:c55e52d09cdd3dd444945b53194a5afc7070c9c6b5d1a757ce15287752ce0aaa@ec2-34-233-115-14.compute-1.amazonaws.com:5432/ddpi80mhfed5ec",
+    "postgres://ptctkbycavtxfx:ab2f1a942775c8b9d8d21962d9774a18015f810f8264d9cd681f000d9f2fef97@ec2-3-226-163-72.compute-1.amazonaws.com:5432/de589bt99vsmpp",
   {
     logging: false,
   }
