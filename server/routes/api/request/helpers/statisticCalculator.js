@@ -9,6 +9,7 @@ module.exports = class StatisticCalculator {
 
   _getStatisticByCountry(fakeUsers) {
     return Object.entries(
+      // Group by country
       fakeUsers.reduce(
         (totCount, user) =>
           user.location.country in totCount
@@ -23,9 +24,10 @@ module.exports = class StatisticCalculator {
         {}
       )
     )
-      .sort((a, b) => b[1].length - a[1].length)
-      .slice(0, 5)
+      .sort((a, b) => b[1].length - a[1].length) // Sort by population
+      .slice(0, 5) // Choose top 5
       .reduce((totData, usersInOneCountry) => {
+        // Calculate PCT
         return {
           ...totData,
           [usersInOneCountry[0]]: this._calcPCT(usersInOneCountry[1]),
@@ -35,6 +37,7 @@ module.exports = class StatisticCalculator {
 
   _getStatisticByState(fakeUsers) {
     return Object.entries(
+      // Group by state
       fakeUsers.reduce(
         (totCount, user) =>
           user.location.state in totCount
@@ -46,9 +49,10 @@ module.exports = class StatisticCalculator {
         {}
       )
     )
-      .sort((a, b) => b[1].length - a[1].length)
-      .slice(0, 5)
+      .sort((a, b) => b[1].length - a[1].length) // Sort by population
+      .slice(0, 5) // Choose top 5
       .reduce((totData, usersInOneState) => {
+        // Calculate PCT
         return {
           ...totData,
           [usersInOneState[0]]: this._calcPCT(usersInOneState[1]),

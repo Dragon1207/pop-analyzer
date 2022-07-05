@@ -35,6 +35,7 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+// Get the new user data from randomuser api and calc statistic
 router.post("/new", async (req, res, next) => {
   try {
     const { user } = req;
@@ -61,6 +62,8 @@ router.post("/new", async (req, res, next) => {
   }
 });
 
+// Return json data for json format
+// Return csv data for csv format
 router.get("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;

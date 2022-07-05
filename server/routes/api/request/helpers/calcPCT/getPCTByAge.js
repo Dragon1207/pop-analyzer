@@ -12,6 +12,7 @@ function getLevel(number) {
 
 module.exports = function (users) {
   const keyPerLevel = ["< 16", "16-25", "26-45", "46-65", "66-85", "86 <"];
+  // Split users by age
   const agePercentage = users.reduce(
     (totCount, user) => {
       const userKey = keyPerLevel[getLevel(user.dob.age)];
@@ -22,6 +23,7 @@ module.exports = function (users) {
     }, {})
   );
 
+  // Calculate PCT for each category
   for (const key of Object.keys(agePercentage))
     agePercentage[key] = getFreshNumber(
       (agePercentage[key] / users.length) * 100
