@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
       User.findOne({
         where: { id: decoded.id },
       }).then((user) => {
-        req.user = user;
+        if (user && typeof user !== "string") req.user = user.toJSON();
         return next();
       });
     });
