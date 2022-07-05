@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Route, Switch, withRouter } from "react-router-dom";
 
-import Signup from "./Signup.js";
-import Login from "./Login.js";
+import Signup from "./components/Auth/Signup.js";
+import Login from "./components/Auth/Login.js";
 import { SnackbarError, Home } from "./components";
 import UserContext from "./context/userContext";
 

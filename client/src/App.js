@@ -1,7 +1,7 @@
 import React from "react";
 import { MuiThemeProvider } from "@material-ui/core";
 import { BrowserRouter } from "react-router-dom";
-import { Container } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 import { theme } from "./themes/theme";
 import Routes from "./routes";
@@ -18,9 +18,9 @@ function App() {
   return (
     <MuiThemeProvider theme={theme}>
       <BrowserRouter>
-        <Container>
+        <Box my={3}>
           <Routes />
-        </Container>
+        </Box>
       </BrowserRouter>
     </MuiThemeProvider>
   );

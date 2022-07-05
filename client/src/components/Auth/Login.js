@@ -32,7 +32,9 @@ const Login = ({ user, login }) => {
         <Grid container item>
           <Typography>Need to register?</Typography>
           <Link href="/register" to="/register">
-            <Button>Register</Button>
+            <Button variant="outlined" color="primary">
+              Register
+            </Button>
           </Link>
         </Grid>
         <form onSubmit={handleLogin}>
@@ -56,7 +58,12 @@ const Login = ({ user, login }) => {
               />
             </FormControl>
             <Grid>
-              <Button type="submit" variant="contained" size="large">
+              <Button
+                type="submit"
+                variant="outlined"
+                color="primary"
+                size="large"
+              >
                 Login
               </Button>
             </Grid>

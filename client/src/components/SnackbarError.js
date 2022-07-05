@@ -23,6 +23,8 @@ const SnackbarError = ({ setSnackBarOpen, errorMessage, snackBarOpen }) => {
       action={
         <React.Fragment>
           <Button
+            variant="outlined"
+            color="primary"
             className={classes.icon}
             size="small"
             onClick={() => setSnackBarOpen(false)}

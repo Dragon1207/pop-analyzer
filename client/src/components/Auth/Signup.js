@@ -32,7 +32,7 @@ const Signup = ({ user, register }) => {
   };
 
   useEffect(() => {
-    if (user && user.id) history.push("/home");
+    if (user && user.id) history.push("/");
   }, [user, history]);
 
   return (
@@ -41,7 +41,9 @@ const Signup = ({ user, register }) => {
         <Grid container item>
           <Typography>Need to log in?</Typography>
           <Link href="/login" to="/login">
-            <Button>Login</Button>
+            <Button variant="outlined" color="primary">
+              Login
+            </Button>
           </Link>
         </Grid>
         <form onSubmit={handleRegister}>
@@ -98,7 +100,12 @@ const Signup = ({ user, register }) => {
                 </FormHelperText>
               </FormControl>
             </Grid>
-            <Button type="submit" variant="contained" size="large">
+            <Button
+              type="submit"
+              variant="outlined"
+              color="primary"
+              size="large"
+            >
               Create
             </Button>
           </Grid>
