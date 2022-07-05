@@ -9,6 +9,7 @@
     "seed": "node db/seed.js"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "connect-session-sequelize": "^7.0.4",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
