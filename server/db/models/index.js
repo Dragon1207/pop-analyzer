@@ -1,14 +1,21 @@
 const User = require("./user");
 const Statistic = require("./statistic");
-const StatisticRequest = require("./statisticRequest");
 
 // associations
 
-StatisticRequest.belongsTo(User);
-Statistic.belongsTo(StatisticRequest);
+Statistic.belongsTo(User, {
+  as: "user",
+  onDelete: "cascade",
+  foreignKey: "user_id",
+});
+
+User.hasMany(Statistic, {
+  as: "statistics",
+  onDelete: "cascade",
+  foreignKey: "user_id",
+});
 
 module.exports = {
   User,
   Statistic,
-  StatisticRequest,
 };
