@@ -22,11 +22,6 @@ const path = require('path')
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, '../client/public')))
 
-// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/../client/public/index.html'))
-})
-
 // require api routes here after I create them
 app.use("/auth", require("./routes/auth"));
 app.use("/api", AuthMiddleware, require("./routes/api"));
@@ -47,5 +42,10 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.json({ error: err });
 });
+
+// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/../client/public/index.html'))
+})
 
 module.exports = { app, sessionStore };
